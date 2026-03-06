@@ -7,7 +7,7 @@ import {
     Home,
     Zap,
     Layout,
-    Globe,
+    BookOpen,
     Tag,
     Mail,
     Menu,
@@ -26,7 +26,7 @@ interface NavItem {
 const navItems: NavItem[] = [
     { name: "Home", url: "/", icon: Home },
     { name: "Features", url: "/features", icon: Layout },
-    { name: "Solutions", url: "/solutions", icon: Globe },
+    { name: "Docs", url: "/docs", icon: BookOpen },
     { name: "Pricing", url: "/pricing", icon: Tag },
     { name: "Contact", url: "/contact", icon: Mail },
 ];

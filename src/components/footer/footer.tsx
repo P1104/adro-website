@@ -37,21 +37,21 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Documentation */}
                     <div className="space-y-6">
-                        <h4 className="font-bold text-lg text-foreground">Solutions</h4>
+                        <h4 className="font-bold text-lg text-foreground">Documentation</h4>
                         <ul className="space-y-4">
-                            <li><Link href="/solutions" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
+                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
                                 <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                E-commerce
+                                Getting Started
                             </Link></li>
-                            <li><Link href="/solutions" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
+                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
                                 <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                FinTech
+                                Uploading Data
                             </Link></li>
-                            <li><Link href="/solutions" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
+                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
                                 <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                SaaS
+                                Dashboards & Export
                             </Link></li>
                         </ul>
                     </div>

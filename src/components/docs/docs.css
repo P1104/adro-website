@@ -1,0 +1,312 @@
+/* ============================================
+   ADRO DOCUMENTATION PAGE STYLES (PREMIUM)
+   ============================================ */
+
+.docs-page {
+    display: flex;
+    background: #ffffff;
+    color: var(--foreground);
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.docs-sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: #fafafa;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 28px 0;
+    overflow-y: auto;
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    scrollbar-width: none;
+}
+
+.docs-sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sidebar Search */
+.docs-sidebar-search {
+    padding: 0 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+}
+
+.docs-sidebar-search-input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.docs-sidebar-search-input::placeholder {
+    color: #aaa;
+}
+
+.docs-sidebar-search-input:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04);
+}
+
+.docs-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 12px;
+}
+
+.docs-sidebar-section {
+    margin-bottom: 6px;
+}
+
+.docs-sidebar-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 9px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+}
+
+.docs-sidebar-section-header:hover {
+    color: #555;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.docs-sidebar-section-header.active-parent {
+    color: #000;
+    background: transparent;
+}
+
+.docs-sidebar-section-header-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.docs-sidebar-chevron {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.4;
+}
+
+.docs-sidebar-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+.docs-sidebar-subitems {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease;
+    opacity: 0;
+    padding-left: 4px;
+}
+
+.docs-sidebar-subitems.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.docs-sidebar-subitem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px 8px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 1px 0;
+    line-height: 1.4;
+}
+
+.docs-sidebar-subitem:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.docs-sidebar-subitem.active {
+    color: #000;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.docs-sidebar-subitem.active::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: #000;
+    border-radius: 4px;
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+.docs-content {
+    flex: 1;
+    min-width: 0;
+    background: #fff;
+}
+
+.docs-content-inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Prose content styling */
+.docs-paragraph {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.docs-list-bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.docs-callout {
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.tracking-tighter {
+    letter-spacing: -2px;
+}
+
+.tracking-tight {
+    letter-spacing: -0.5px;
+}
+
+/* Bottom navigation */
+.docs-bottom-nav {
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   ON THIS PAGE (right sidebar)
+   ============================================ */
+.docs-toc {
+    width: 220px;
+    min-width: 220px;
+    position: sticky;
+    top: 96px;
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 0 24px;
+    scrollbar-width: none;
+}
+
+.docs-toc::-webkit-scrollbar {
+    display: none;
+}
+
+.docs-toc-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.docs-toc-item {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    padding: 5px 0;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.docs-toc-item:hover {
+    color: #333;
+}
+
+.docs-toc-item.active {
+    color: #000;
+    font-weight: 600;
+    border-left-color: #000;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1280px) {
+    .docs-toc {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .docs-page {
+        flex-direction: column;
+    }
+
+    .docs-sidebar {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        position: relative;
+        top: 0;
+        padding: 20px 0;
+        max-height: 400px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .tracking-tighter {
+        letter-spacing: -1px;
+    }
+}
+
+@media (max-width: 640px) {
+    .tracking-tighter {
+        letter-spacing: -0.5px;
+    }
+
+    .docs-content-inner {
+        padding: 24px 16px !important;
+    }
+}

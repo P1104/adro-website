@@ -1,13 +1,5 @@
-import { HomeHero } from "@/components/home/HomeHero";
-import { HomeFeatures } from "@/components/home/HomeFeatures";
-import { HomeCTA } from "@/components/home/HomeCTA";
+import { HomeMain } from "@/components/home/HomeMain";
 
 export default function Home() {
-  return (
-    <>
-      <HomeHero />
-      <HomeFeatures />
-      <HomeCTA />
-    </>
-  );
+  return <HomeMain />;
 }
