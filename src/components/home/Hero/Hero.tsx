@@ -212,7 +212,7 @@ export const Hero = () => {
               Automated Data Intelligence Platform
             </div>
             <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-black mb-6 leading-[1.1]">
-              AI Analytics Made Private. <br />
+              ADRO – Ask Your Data Anything. <br />
               <motion.span
                 animate={{ opacity: [0.4, 0.7, 0.4] }}
                 transition={{ duration: 4, repeat: Infinity }}
@@ -220,10 +220,7 @@ export const Hero = () => {
               ></motion.span>
             </h1>
             <p className="text-base md:text-lg text-black/50 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-              A streamlined analytics platform that transforms raw datasets into
-              interactive dashboards. Upload your data, automatically clean and
-              analyze it, and generate charts or insights using natural language
-              queries.
+              ADRO is an AI data analytics platform that converts raw datasets into meaningful insights and interactive dashboards. Upload Excel or CSV files, let AI automatically clean and analyze your data, and generate visualizations or insights by asking questions in natural language
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <Button

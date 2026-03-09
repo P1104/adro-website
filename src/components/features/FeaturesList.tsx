@@ -10,16 +10,8 @@ const features = [
         description: "Lightning-fast file processing. Converts CSV/Excel into optimized DuckDB tables for millisecond query response.",
         icon: Database,
     },
-    {
-        title: "Metadata Engine",
-        description: "Automatic generation of metadata.json during upload. Tracks stats, column types, and structural integrity.",
-        icon: Layers,
-    },
-    {
-        title: "Anomaly Guard",
-        description: "Built-in anomaly.py module scans your dataset for outliers and structural errors automatically.",
-        icon: Shield,
-    },
+
+
     {
         title: "Query API",
         description: "LLM-driven chart data generation. Maps natural language directly to visualized data structures.",
@@ -30,11 +22,7 @@ const features = [
         description: "Clean.py utilities handle categorical normalization, null replacement, and type casting out of the box.",
         icon: Sparkles,
     },
-    {
-        title: "Column Insights",
-        description: "Prefix /columns access to deep statistical data—min, max, counts, and distribution mapping.",
-        icon: Search,
-    },
+
     {
         title: "Export Suite",
         description: "High-fidelity exports for dashboards and tables. Integrated SVG, PDF, and CSV generation.",
@@ -71,11 +59,10 @@ export const FeaturesList = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-6xl font-black text-black mb-6"
                     >
-                        Total Control Over Your Data
+                        Take Full Control of Your Data
                     </motion.h2>
                     <p className="text-black/60 max-w-2xl mx-auto text-xl font-medium leading-relaxed">
-                        Explore the vast capabilities of our platform. We&apos;ve built everything you need
-                        to transform raw information into a competitive advantage.
+                        ADRO turns raw datasets into powerful insights, helping you analyze, visualize, and understand your data faster.
                     </p>
                 </div>
 

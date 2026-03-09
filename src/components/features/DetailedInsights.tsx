@@ -24,7 +24,7 @@ export const DetailedInsights = () => {
                                 <div>
                                     <h3 className="text-xl font-bold text-black mb-3">Neural Context Engine</h3>
                                     <p className="text-black/60 font-medium leading-relaxed">
-                                        Our context engine understands semantic relationships between data points, building a knowledge graph that identifies correlations traditional models miss.
+                                        ADRO understands semantic relationships across your data. It builds a dynamic knowledge graph that reveals hidden correlations traditional analytics tools often miss.
                                     </p>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ export const DetailedInsights = () => {
                                 <div>
                                     <h3 className="text-xl font-bold text-black mb-3">Multi-Modal Data Processing</h3>
                                     <p className="text-black/60 font-medium leading-relaxed">
-                                        Seamlessly integrates structured CSVs, semi-structured JSON, and unstructured PDFs into a unified intelligence layer for cross-functional analysis.
+                                        Analyze CSV, JSON, and PDF datasets in one unified intelligence layer. ADRO combines structured and unstructured data to generate deeper cross-dataset insights.
                                     </p>
                                 </div>
                             </div>

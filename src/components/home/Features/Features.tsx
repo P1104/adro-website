@@ -81,43 +81,43 @@ export const Features = () => {
             <GridItem
               area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
               icon={<Upload className="h-5 w-5" />}
-              title="Automatic Metadata Generation"
-              description="During upload, the system analyzes your dataset and generates metadata including column types, statistics, and dataset information."
+              title="Automatic Metadata Intelligence"
+              description="Upload your dataset and ADRO instantly detects column types, generates metadata, and calculates key statistics."
             />
 
             <GridItem
               area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
               icon={<Database className="h-5 w-5" />}
-              title="Unified Data Model"
-              description="ADRO automatically detects structure, metrics, and patterns — no technical setup needed."
+              title="Unified AI Data Model"
+              description="Automatically identifies dataset structure, relationships, metrics, and patterns — no setup or configuration required."
             />
 
             <GridItem
               area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/2/8]"
               icon={<BarChart3 className="h-5 w-5" />}
-              title="Interactive Dashboard Builder"
-              description="Generate visualizations directly from your dataset. Create charts and dashboards instantly without complex BI tools."
+              title="Natural Language Querying"
+              description="Ask questions about your data in plain language and instantly receive meaningful insights and visualizations."
             />
 
             <GridItem
               area="md:[grid-area:2/7/3/13] xl:[grid-area:2/5/3/8]"
               icon={<LineChart className="h-5 w-5" />}
               title="Dataset Statistics Engine"
-              description="View column-level insights such as min, max, counts, and distributions generated directly from dataset metadata."
+              description="View column-level insights including min, max, counts, and distributions — generated directly from your metadata."
             />
 
             <GridItem
               area="md:[grid-area:3/1/4/7] xl:[grid-area:1/8/2/13]"
               icon={<Zap className="h-5 w-5" />}
-              title="Natural Language Queries"
-              description="Ask questions about your dataset and generate visualizations automatically using intelligent query processing."
+              title="Instant Chart & Dashboard Generation"
+              description="Generate charts and dashboards directly from your dataset — no complex BI tools or manual setup needed."
             />
 
             <GridItem
               area="md:[grid-area:3/7/4/13] xl:[grid-area:2/8/3/13]"
               icon={<Shield className="h-5 w-5" />}
-              title="Local Data Processing"
-              description="Process and analyze datasets locally without relying on external cloud services."
+              title="Private Local Data Processing"
+              description="Your data stays with you. ADRO processes everything locally so you can analyze securely without external services."
             />
           </ul>
         </motion.div>

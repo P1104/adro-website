@@ -3,7 +3,7 @@
 import { AboutHero } from "./AboutHero";
 import { Values } from "./Values";
 import { Story } from "./Story";
-import { CTA } from "@/components/home/CTA/CTA";
+// import { CTA } from "@/components/home/CTA/CTA";
 
 export const AboutMain = () => {
     return (
@@ -11,7 +11,7 @@ export const AboutMain = () => {
             <AboutHero />
             <Values />
             <Story />
-            <CTA />
+            {/* <CTA /> */}
         </main>
     );
 };
