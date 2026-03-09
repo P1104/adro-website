@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FileText, Gamepad2, AlertTriangle, UserCheck, GraduationCap, Zap,
-  Box, Truck, ShieldCheck, Activity, HeartPulse, Shield, Thermometer
+  Box, Truck, ShieldCheck, Activity, HeartPulse, Shield, Thermometer,
+  Maximize2, CloudDownload, TrendingUp, Target, DollarSign, Users, Briefcase
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useMemo, useState, useEffect } from "react";
@@ -16,11 +17,11 @@ const datasets = [
     id: "gaming",
     topic: "Gaming Addiction Survey",
     summaries: [
-      { title: "Responses", value: "2,405", subtitle: "Complete survey responses", icon: FileText, colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
-      { title: "Gaming", value: "68%", subtitle: "Percentage playing online", icon: Gamepad2, colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
-      { title: "High Fear", value: "38%", subtitle: "Parents fearing addiction", icon: AlertTriangle, colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
-      { title: "Female", value: "64%", subtitle: "Female respondents", icon: UserCheck, colorClass: "bg-pink-500", textClass: "text-pink-600 bg-pink-50" },
-      { title: "Avg Age", value: "11", subtitle: "Most common age group", icon: GraduationCap, colorClass: "bg-purple-500", textClass: "text-purple-600 bg-purple-50" }
+      { title: "Total Survey Responses", value: "100", subtitle: "Total number of respondents", icon: "📊", colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
+      { title: "Income Data Available", value: "67", subtitle: "Respondents who provided income information", icon: "💰", colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
+      { title: "Most Common Income Range", value: "₹70K - ₹2.7L", subtitle: "Highest frequency income bracket", icon: "🏦", colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
+      { title: "High Income Earners", value: "14", subtitle: "Earning more than ₹8,45,000", icon: "💎", colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
+      { title: "Avg Age", value: "11", subtitle: "Most common age group", icon: "🎓", colorClass: "bg-purple-500", textClass: "text-purple-600 bg-purple-50" }
     ],
     charts: [
       { id: "g1", title: "Online Gaming Distribution", type: "pie", labels: ["Yes", "No", "Sometimes"], data: [45, 20, 35], colors: ["#ef4444", "#2dd4bf", "#facc15"] },
@@ -32,14 +33,33 @@ const datasets = [
     ]
   },
   {
+    id: "sales",
+    topic: "B2B Sales Revenue",
+    summaries: [
+      { title: "Quarterly Revenue", value: "$4.2M", subtitle: "Total closed won revenue", icon: "💵", colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
+      { title: "Active Opportunities", value: "342", subtitle: "Deals in negotiation phase", icon: "🎯", colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
+      { title: "Win Rate", value: "68%", subtitle: "Average conversion this quarter", icon: "📈", colorClass: "bg-indigo-500", textClass: "text-indigo-600 bg-indigo-50" },
+      { title: "Avg Deal Size", value: "$45K", subtitle: "Average ACV across all segments", icon: "💼", colorClass: "bg-purple-500", textClass: "text-purple-600 bg-purple-50" },
+      { title: "New Leads", value: "1,204", subtitle: "Inbound leads generated this week", icon: "👥", colorClass: "bg-orange-500", textClass: "text-orange-600 bg-orange-50" }
+    ],
+    charts: [
+      { id: "s1", title: "Revenue by Region", type: "pie", labels: ["North America", "EMEA", "APAC", "LATAM"], data: [45, 30, 15, 10], colors: ["#3b82f6", "#8b5cf6", "#ec4899", "#f59e0b"] },
+      { id: "s2", title: "Quarterly Pipeline Growth", type: "bar", labels: ["Q1", "Q2", "Q3", "Q4"], data: [2.1, 3.4, 4.2, 5.8], colors: ["#10b981", "#3b82f6", "#8b5cf6", "#f43f5e"] },
+      { id: "s3", title: "Deal Sources", type: "donut", labels: ["Inbound", "Outbound", "Partners", "Referral"], data: [40, 35, 15, 10], colors: ["#0ea5e9", "#f59e0b", "#10b981", "#8b5cf6"] },
+      { id: "s4", title: "Monthly Revenue Trend", type: "area", labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], data: [1.2, 1.5, 1.8, 2.4, 3.1, 4.2], color: "#10b981" },
+      { id: "s5", title: "Product Category Revenue", type: "pie2", labels: ["Enterprise", "Professional", "Starter", "Add-ons"], data: [55, 25, 10, 10], colors: ["#4f46e5", "#0ea5e9", "#f59e0b", "#ec4899"] },
+      { id: "s6", title: "Top Performing Reps", type: "hbar", labels: ["Sarah J.", "Mike T.", "David L.", "Emma W.", "Chris B.", "Alex K."], data: [1.2, 1.0, 0.8, 0.7, 0.5, 0.4] }
+    ]
+  },
+  {
     id: "ecommerce",
     topic: "E-Commerce Logistics",
     summaries: [
-      { title: "Orders", value: "12,840", subtitle: "Orders processed today", icon: Box, colorClass: "bg-orange-500", textClass: "text-orange-600 bg-orange-50" },
-      { title: "On-Time", value: "94.2%", subtitle: "Delivery success rate", icon: Truck, colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
-      { title: "Delayed", value: "5.8%", subtitle: "Delayed shipments", icon: AlertTriangle, colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
-      { title: "Prime", value: "72%", subtitle: "Premium subscribers", icon: ShieldCheck, colorClass: "bg-indigo-500", textClass: "text-indigo-600 bg-indigo-50" },
-      { title: "Avg Time", value: "2.4h", subtitle: "Processing time per order", icon: Activity, colorClass: "bg-cyan-500", textClass: "text-cyan-600 bg-cyan-50" }
+      { title: "Orders", value: "12,840", subtitle: "Orders processed today", icon: "📦", colorClass: "bg-orange-500", textClass: "text-orange-600 bg-orange-50" },
+      { title: "On-Time", value: "94.2%", subtitle: "Delivery success rate", icon: "🚚", colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
+      { title: "Delayed", value: "5.8%", subtitle: "Delayed shipments", icon: "⏳", colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
+      { title: "Prime", value: "72%", subtitle: "Premium subscribers", icon: "👑", colorClass: "bg-indigo-500", textClass: "text-indigo-600 bg-indigo-50" },
+      { title: "Avg Time", value: "2.4h", subtitle: "Processing time per order", icon: "⚡", colorClass: "bg-cyan-500", textClass: "text-cyan-600 bg-cyan-50" }
     ],
     charts: [
       { id: "e1", title: "Shipping Status", type: "pie", labels: ["Delivered", "In Transit", "Processing"], data: [75, 15, 10], colors: ["#22c55e", "#f59e0b", "#3b82f6"] },
@@ -54,11 +74,11 @@ const datasets = [
     id: "healthcare",
     topic: "Healthcare Patient Monitoring",
     summaries: [
-      { title: "Patients", value: "1,204", subtitle: "Active patients currently", icon: HeartPulse, colorClass: "bg-rose-500", textClass: "text-rose-600 bg-rose-50" },
-      { title: "Stable", value: "88%", subtitle: "Patients in stable condition", icon: Shield, colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
-      { title: "Critical", value: "12%", subtitle: "ICU / Critical care", icon: AlertTriangle, colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
-      { title: "Admissions", value: "45", subtitle: "Admitted today", icon: Activity, colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
-      { title: "Avg Temp", value: "98.6°", subtitle: "Average baseline normal", icon: Thermometer, colorClass: "bg-yellow-500", textClass: "text-yellow-600 bg-yellow-50" }
+      { title: "Patients", value: "1,204", subtitle: "Active patients currently", icon: "🏥", colorClass: "bg-rose-500", textClass: "text-rose-600 bg-rose-50" },
+      { title: "Stable", value: "88%", subtitle: "Patients in stable condition", icon: "✅", colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
+      { title: "Critical", value: "12%", subtitle: "ICU / Critical care", icon: "🚨", colorClass: "bg-red-500", textClass: "text-red-500 bg-red-50" },
+      { title: "Admissions", value: "45", subtitle: "Admitted today", icon: "📈", colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
+      { title: "Avg Temp", value: "98.6°", subtitle: "Average baseline normal", icon: "🌡️", colorClass: "bg-yellow-500", textClass: "text-yellow-600 bg-yellow-50" }
     ],
     charts: [
       { id: "h1", title: "Patient Condition Grid", type: "pie", labels: ["Stable", "Fair", "Critical"], data: [65, 23, 12], colors: ["#22c55e", "#facc15", "#ef4444"] },
@@ -67,6 +87,25 @@ const datasets = [
       { id: "h4", title: "Hourly Admissions", type: "area", labels: ["6AM", "10AM", "2PM", "6PM", "10PM"], data: [5, 12, 18, 8, 2], color: "#ef4444" },
       { id: "h5", title: "Ward Utilization", type: "pie2", labels: ["ICU", "General", "Maternity", "ER"], data: [20, 45, 15, 20], colors: ["#ef4444", "#3b82f6", "#ec4899", "#f59e0b"] },
       { id: "h6", title: "Top Diagnoses", type: "hbar", labels: ["Flu", "Fracture", "Cardiac", "Asthma", "Diabetes", "Stroke", "Cancer", "Other"], data: [150, 120, 90, 80, 75, 40, 30, 20] }
+    ]
+  },
+  {
+    id: "sales",
+    topic: "B2B Sales Pipeline Analytics",
+    summaries: [
+      { title: "Quarterly Revenue", value: "$4.2M", subtitle: "Total closed won revenue", icon: "💵", colorClass: "bg-emerald-500", textClass: "text-emerald-600 bg-emerald-50" },
+      { title: "Active Opportunities", value: "342", subtitle: "Deals in negotiation phase", icon: "🎯", colorClass: "bg-blue-500", textClass: "text-blue-600 bg-blue-50" },
+      { title: "Win Rate", value: "68%", subtitle: "Average conversion this quarter", icon: "📈", colorClass: "bg-indigo-500", textClass: "text-indigo-600 bg-indigo-50" },
+      { title: "Avg Deal Size", value: "$45K", subtitle: "Average ACV across all segments", icon: "💼", colorClass: "bg-purple-500", textClass: "text-purple-600 bg-purple-50" },
+      { title: "New Leads", value: "1,204", subtitle: "Inbound leads generated this week", icon: "👥", colorClass: "bg-orange-500", textClass: "text-orange-600 bg-orange-50" }
+    ],
+    charts: [
+      { id: "s1", title: "Revenue by Region", type: "pie", labels: ["North America", "EMEA", "APAC", "LATAM"], data: [45, 30, 15, 10], colors: ["#3b82f6", "#8b5cf6", "#ec4899", "#f59e0b"] },
+      { id: "s2", title: "Quarterly Pipeline Growth", type: "bar", labels: ["Q1", "Q2", "Q3", "Q4"], data: [2.1, 3.4, 4.2, 5.8], colors: ["#10b981", "#3b82f6", "#8b5cf6", "#f43f5e"] },
+      { id: "s3", title: "Deal Sources", type: "donut", labels: ["Inbound", "Outbound", "Partners", "Referral"], data: [40, 35, 15, 10], colors: ["#0ea5e9", "#f59e0b", "#10b981", "#8b5cf6"] },
+      { id: "s4", title: "Monthly Revenue Trend", type: "area", labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], data: [1.2, 1.5, 1.8, 2.4, 3.1, 4.2], color: "#10b981" },
+      { id: "s5", title: "Product Category Revenue", type: "pie2", labels: ["Enterprise", "Professional", "Starter", "Add-ons"], data: [55, 25, 10, 10], colors: ["#4f46e5", "#0ea5e9", "#f59e0b", "#ec4899"] },
+      { id: "s6", title: "Top Performing Reps", type: "hbar", labels: ["Sarah J.", "Mike T.", "David L.", "Emma W.", "Chris B.", "Alex K."], data: [1.2, 1.0, 0.8, 0.7, 0.5, 0.4] }
     ]
   }
 ];
@@ -201,24 +240,24 @@ const getChartOptions = (chart: any) => {
   return {};
 };
 
-const SummaryCard = ({ title, value, subtitle, icon: Icon, colorClass }: any) => (
-  <div className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-4 flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all h-[110px]">
-    <div className={`absolute -right-6 -top-6 w-24 h-24 rounded-full opacity-[0.03] transition-transform group-hover:scale-110 ${colorClass}`} />
-
-    <div className="flex items-center justify-between mb-3 relative z-10">
-      <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{title}</span>
-      <div className="flex items-center justify-center text-gray-400">
-        <Icon size={16} strokeWidth={1.5} />
+const SummaryCard = ({ title, value, subtitle, icon, colorClass }: any) => {
+  return (
+    <div className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-4 flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all h-[110px]">
+      <div className="flex items-start justify-between mb-3 relative z-10 gap-2">
+        <span className="text-[11px] font-bold text-gray-600 leading-tight truncate px-0">{title}</span>
+        <div className="flex-shrink-0 flex items-center justify-center w-[24px] h-[24px] bg-[#f8f9fa] border border-[#e5e7eb] rounded-md shadow-sm text-sm">
+          {icon}
+        </div>
+      </div>
+      <div className="relative z-10 flex flex-col justify-end">
+        <div className="text-[26px] font-black text-gray-900 leading-none mb-1.5 tabular-nums tracking-tight">
+          {value}
+        </div>
+        <div className="text-[10px] text-gray-500 font-medium leading-tight max-w-[95%]">{subtitle}</div>
       </div>
     </div>
-    <div className="relative z-10 flex flex-col justify-end">
-      <div className="text-[26px] font-black text-gray-900 leading-none mb-1.5 tabular-nums tracking-tight">
-        {value}
-      </div>
-      <div className="text-[10px] text-gray-400 font-medium leading-tight max-w-[95%]">{subtitle}</div>
-    </div>
-  </div>
-);
+  );
+};
 
 const itemVariants = {
   hidden: { scale: 0.1, x: 0, y: 0, filter: "blur(20px)", opacity: 0 },
@@ -362,9 +401,11 @@ export const Hero = () => {
                         className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-5 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow relative overflow-hidden"
                         transition={{ delay: idx * 0.05 + 0.1 }}
                       >
-                        <div className="flex items-center justify-between mb-2 relative z-10">
-                          <span className="text-sm font-bold text-gray-800">{chart.title}</span>
-                          {/* Removed Maximize/Download buttons as requested */}
+                        <div className="flex items-center justify-between mb-2 relative z-10 w-full">
+                          <span className="text-sm font-bold text-gray-800 truncate pr-2">{chart.title}</span>
+                          <div className="flex items-center gap-1.5 flex-shrink-0">
+
+                          </div>
                         </div>
                         <div style={{ height: "220px", position: "relative", width: "100%" }} className="z-10 mt-2">
                           <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
