@@ -8,7 +8,7 @@ import {
     Zap,
     Layout,
     BookOpen,
-    Tag,
+    Download,
     Mail,
     Menu,
     X,
@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
     { name: "Home", url: "/", icon: Home },
     { name: "Features", url: "/features", icon: Layout },
     { name: "Docs", url: "/docs", icon: BookOpen },
-    { name: "Pricing", url: "/pricing", icon: Tag },
+    { name: "Downloads", url: "/downloads", icon: Download },
     { name: "Contact", url: "/contact", icon: Mail },
 ];
 
