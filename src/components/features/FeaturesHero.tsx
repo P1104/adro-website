@@ -104,7 +104,7 @@ export const FeaturesHero = () => {
                         <span className="text-black/40 text-3xl md:text-5xl">Clarity & Control.</span>
                     </h1>
                     <p className="text-lg md:text-xl text-black/40 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Explore the powerful technical foundation of ADRO. From automated DuckDB data ingestion to metadata-driven anomaly detection, every component is optimized for fast, intelligent data analysis.
+                        Explore the powerful technical foundation of ADRO. Turn raw datasets into interactive analytics. Ask questions, generate custom charts, and build dashboards instantly with AI — with minimal setup.
                     </p>
                 </motion.div>
 

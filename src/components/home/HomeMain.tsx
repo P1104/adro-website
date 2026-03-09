@@ -4,7 +4,8 @@
 import { Hero } from "./Hero/Hero";
 // import { Workflow } from "./Workflow/Workflow";
 import { Features } from "./Features/Features";
-import { Pricing } from "./Pricing/Pricing";
+import { Demo } from "./Demo/Demo";
+// import { Pricing } from "./Pricing/Pricing";
 // import { CTA } from "./CTA/CTA";
 
 export const HomeMain = () => {
@@ -14,7 +15,8 @@ export const HomeMain = () => {
             {/* <SimpleTitle /> */}
             {/* <Workflow /> */}
             <Features />
-            <Pricing />
+            <Demo />
+            {/* <Pricing /> */}
             {/* <CTA /> */}
         </main>
     );
