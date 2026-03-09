@@ -150,7 +150,7 @@ export default function DocsContent({
     if (!result) {
         return (
             <main className="docs-content">
-                <div className="docs-content-inner px-6 md:px-12 py-16">
+                <div className="docs-content-inner px-2 md:px-10 py-16">
                     <div className="flex flex-col gap-6 py-12 text-center items-center">
                         <Badge variant="outline" className="w-fit text-xs font-bold uppercase tracking-widest">Welcome</Badge>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tighter font-black max-w-3xl text-black">
