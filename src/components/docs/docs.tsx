@@ -22,7 +22,7 @@ export default function Docs() {
     }, []);
 
     return (
-        <div className="flex flex-col min-h-screen bg-white pt-16">
+        <div className="flex flex-col min-h-screen bg-white pt-2">
             <div className="flex flex-1 relative docs-page">
                 <DocsSidebar
                     sections={docsData}

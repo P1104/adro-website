@@ -1,117 +1,124 @@
 "use client";
-
-import React from "react";
+import Image from "next/image";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import {
-    Mail,
-    Phone,
-    MapPin,
-    Linkedin,
-    Youtube,
-    Zap,
-    ArrowRight
-} from "lucide-react";
+import { Mail, Phone, Linkedin, Instagram, Zap, ArrowRight } from "lucide-react";
 
 export function Footer() {
-    return (
-        <footer className="bg-white border-t border-border pt-24 pb-12 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-                    {/* Brand Info */}
-                    <div className="space-y-6">
-                        <Link href="/" className="flex items-center gap-2">
-                            <Zap className="text-primary fill-primary" size={24} />
-                            <span className="font-bold text-2xl tracking-tight">ADRO</span>
-                        </Link>
-                        <p className="text-muted-foreground leading-relaxed font-medium">
-                            Transforming raw data into meaningful intelligence.
-                            Our AI-driven platform solves complexity and empowers your team with instant insights.
-                        </p>
-                        <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                                <Linkedin size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
-                                <Youtube size={18} />
-                            </a>
-                        </div>
-                    </div>
+  const [isVisible, setIsVisible] = useState(false);
+  const footerRef = useRef(null);
 
-                    {/* Documentation */}
-                    <div className="space-y-6">
-                        <h4 className="font-bold text-lg text-foreground">Documentation</h4>
-                        <ul className="space-y-4">
-                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Getting Started
-                            </Link></li>
-                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Uploading Data
-                            </Link></li>
-                            <li><Link href="/docs" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Dashboards & Export
-                            </Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Product */}
-                    <div className="space-y-6">
-                        <h4 className="font-bold text-lg text-foreground">Product</h4>
-                        <ul className="space-y-4">
-                            <li><Link href="/features" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Features
-                            </Link></li>
-                            <li><Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Pricing
-                            </Link></li>
-                            <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors font-medium inline-flex items-center group">
-                                <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                Contact Sales
-                            </Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact Details */}
-                    <div className="space-y-6">
-                        <h4 className="font-bold text-lg text-foreground">Get in Touch</h4>
-                        <div className="space-y-4">
-                            <a href="mailto:contact@adro-intelligence.com" className="flex items-start gap-3 group">
-                                <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                                    <Mail className="w-5 h-5 text-primary" />
-                                </div>
-                                <div className="flex-1">
-                                    <p className="text-sm font-bold text-foreground">Email</p>
-                                    <p className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">contact@adro-intelligence.com</p>
-                                </div>
-                            </a>
-                            <div className="flex items-start gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center">
-                                    <Phone className="w-5 h-5 text-primary" />
-                                </div>
-                                <div className="flex-1">
-                                    <p className="text-sm font-bold text-foreground">Location</p>
-                                    <p className="text-sm text-muted-foreground font-medium">Bangalore, India</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Copyright */}
-                <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-                    <p className="text-muted-foreground text-sm font-medium">
-                        © 2026 ADRO Intelligence Pvt Ltd. All rights reserved.
-                    </p>
-                    <div className="flex gap-8 text-sm font-medium text-muted-foreground">
-                        <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 } // Triggers when 10% of the footer is visible
     );
+
+    if (footerRef.current) observer.observe(footerRef.current);
+    return () => observer.disconnect();
+  }, []);
+  
+
+  return (
+    <footer className="w-full pt-10 pb-8 bg-white overflow-hidden">
+      <div
+        ref={footerRef}
+        className={`max-w-7xl mx-auto px-10 py-8 relative z-10 
+                    /* SILVER GLASS TINT */
+                    backdrop-blur-2xl bg-slate-50/40 
+                    border border-slate-200/60 rounded-[2.5rem] 
+                    shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)]
+                    
+                    /* FADE OUT/IN ANIMATION LOGIC */
+                    transition-all duration-1000 ease-out
+                    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+                  `}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-col gap-3">
+                <Link href="/" className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden">
+                    <Image
+                    src="/logo.svg"
+                    alt="ADRO logo"
+                    width={40}
+                    height={40}
+                    className="object-cover"
+                    />
+                </div>
+
+                <span className="text-lg font-bold text-slate-900">
+                    ADRO
+                </span>
+                </Link>
+ 
+            <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
+              Transforming raw data into meaningful intelligence.
+              ADRO uses AI to simplify analytics.
+            </p>
+
+            <div className="flex gap-4 mt-1 text-slate-400">
+              <a href="https://www.linkedin.com/company/equilibrate-ai/" className="hover:text-slate-900 transition-colors">
+                <Linkedin size={16} />
+              </a>
+              <a href="#" className="hover:text-slate-900 transition-colors">
+                <Instagram size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* Product */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900">product</h3>
+    
+            <Link href="/features" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+             Features
+            </Link>
+             <Link href="/downloads" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+             Downloads
+            </Link>
+             <Link href="/docs" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+             Docs
+            </Link>
+          </div>
+
+          {/* Legal */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900">Legal</h3>
+    
+            <Link href="#" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-900">Get in Touch</h3>
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <Mail size={14} className="text-slate-400" />
+             <a
+  href="mailto:support@equilibrateai.com?subject=Support%20Request"
+  className="hover:text-slate-900"
+>
+  support@equilibrateai.com
+</a>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <Phone size={14} className="text-slate-400" />
+              <a href="tel:+919606024155" className="hover:text-slate-900">+91 9606024155</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Reduced spacing for the bottom bar */}
+        <div className="mt-8 pt-5 border-t border-slate-200/50 text-center text-[12px] font-medium text-slate-400">
+          © {new Date().getFullYear()} Equilibrate.AI Technologies private limited. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }

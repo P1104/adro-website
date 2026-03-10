@@ -17,7 +17,7 @@ import {
 
 export const DetailedInsights = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24 px-16 bg-white">
             <div className="container mx-auto px-4">
 
                 {/* Header */}

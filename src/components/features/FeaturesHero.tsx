@@ -86,7 +86,7 @@ const stats = [
 
 export const FeaturesHero = () => {
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+        <section className="relative pt-32 pb-20 px-16 overflow-hidden bg-white">
             <div className="container mx-auto px-4">
                 {/* Hero Text */}
                 <motion.div

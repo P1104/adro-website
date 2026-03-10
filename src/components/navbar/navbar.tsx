@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -45,7 +45,16 @@ export function Navbar() {
             <div className="hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50">
                 <div className="flex items-center gap-2 bg-white/70 border border-border backdrop-blur-xl py-2 px-3 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
                     <Link href="/" className="flex items-center gap-2 px-4 mr-2 border-r border-border/50">
-                        <Zap className="text-primary fill-primary" size={20} />
+                       <div className="w-6 h-6 rounded-full overflow-hidden">
+                                           <Image
+                                           src="/logo.svg"
+                                           alt="ADRO logo"
+                                           width={25}
+                                           height={25}
+                                           className="object-contain"
+                                           />
+                                       </div>
+                        
                         <span className="font-bold text-lg tracking-tight">ADRO</span>
                     </Link>
                     {navItems.map((item) => {
@@ -100,7 +109,16 @@ export function Navbar() {
                     >
                         <div className="flex justify-between items-center mb-12">
                             <div className="flex items-center gap-2">
-                                <Zap className="text-primary fill-primary" size={24} />
+                     <div className="w-6 h-6 rounded-full overflow-hidden">
+                                           <Image
+                                           src="/logo.svg"
+                                           alt="ADRO logo"
+                                           width={25}
+                                           height={25}
+                                           className="object-contain"
+                                           />
+                                       </div>
+                        
                                 <span className="font-bold text-2xl tracking-tight">ADRO</span>
                             </div>
                             <button
