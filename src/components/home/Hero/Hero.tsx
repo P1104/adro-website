@@ -5,10 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FileText, Gamepad2, AlertTriangle, UserCheck, GraduationCap, Zap,
   Box, Truck, ShieldCheck, Activity, HeartPulse, Shield, Thermometer,
-  Maximize2, CloudDownload, TrendingUp, Target, DollarSign, Users, Briefcase
+  Maximize2, CloudDownload, TrendingUp, Target, DollarSign, Users, Briefcase,
+  AlertCircle, Clock, Database, Code, Layout, MessageSquare, LineChart, Rocket,
+  CheckCircle2, BarChart2, PieChart, TrendingDown, Target as TargetIcon,
+  Settings, DollarSign as FinanceIcon, Megaphone, ArrowRight as ArrowRightIcon
 } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useMemo, useState, useEffect } from "react";
+import { Badge } from "@/components/ui/badge";
 
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
@@ -282,6 +286,9 @@ const itemVariants = {
   })
 };
 
+// --- New Sub-components for Additional Content ---
+
+
 export const Hero = () => {
   const [activeSetIndex, setActiveSetIndex] = useState(0);
 
@@ -296,135 +303,152 @@ export const Hero = () => {
   const activeDataset = datasets[activeSetIndex];
 
   return (
-    <section className="relative pt-28 pb-16 overflow-hidden min-h-[85vh] flex items-center bg-[#fafafa]">
-      {/* Dynamic Background Blobs */}
-      <motion.div
-        animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-indigo-500/[0.04] blur-[100px] rounded-full"
-      />
-      <motion.div
-        animate={{ scale: [1.2, 1, 1.2], x: [0, -40, 0], y: [0, 60, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-emerald-500/[0.03] blur-[100px] rounded-full"
-      />
+    <>
+      <section className="relative pt-28 pb-16 overflow-hidden min-h-[85vh] flex items-center bg-white">
+        <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
+          <div className="flex flex-col items-center text-center mx-auto w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "circOut" }}
+              className="max-w-4xl"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-gray-700 text-[10px] font-black tracking-widest uppercase mb-6">
+                <Zap size={12} className="text-black" />
+                AI Data Analytics Tool
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-gray-900 mb-6 leading-[1.1]">
+                Ask Questions to Your Data with AI
+              </h1>
+              <p className="text-base md:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed font-semibold">
+                Turn raw data into insights instantly. Upload your data, ask questions and generate dashboards, charts,analytics with ADRO’s AI-powered platform.
+              </p>
 
-      <div className="container mx-auto px-4 relative z-10 w-full max-w-7xl">
-        <div className="flex flex-col items-center text-center mx-auto w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "circOut" }}
-            className="max-w-4xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-gray-200 shadow-sm text-gray-700 text-[10px] font-black tracking-widest uppercase mb-6">
-              <Zap size={12} className="text-indigo-600 animate-pulse" />
-              Automated Data Intelligence Platform
-            </div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-gray-900 mb-6 leading-[1.1]">
-              ADRO – Ask Your Data Anything.
-            </h1>
-            <p className="text-base md:text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-              ADRO is an AI data analytics platform that converts raw datasets into meaningful insights and interactive dashboards. Upload Excel or CSV files, let AI automatically clean and analyze your data.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <Button
-                size="lg"
-                className="h-14 px-8 bg-gray-900 text-white font-black text-[15px] hover:bg-gray-800 transition-all rounded-2xl shadow-[0_8px_20px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_24px_-8px_rgba(0,0,0,0.4)]"
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-12">
+                {[
+                  { icon: AlertCircle, text: "No SQL" },
+                  { icon: Layout, text: "No manual dashboards" },
+                  { icon: Settings, text: "No complex BI tools" }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + (i * 0.1) }}
+                    className="flex items-center gap-2 text-[10px] font-black text-gray-400 uppercase tracking-widest"
+                  >
+                    <item.icon size={14} className="text-gray-400" />
+                    {item.text}
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
+                <Button
+                  size="lg"
+                  className="h-16 px-10 bg-gray-900 text-white font-black text-lg hover:bg-gray-800 transition-all rounded-2xl shadow-[0_15px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.4)] hover:scale-105 active:scale-95"
+                >
+                  Start Exploring Data
+                </Button>
+              </div> */}
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 1 }}
+                className="mt-6 inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gray-50 border border-gray-100 text-black text-[11px] font-black uppercase tracking-widest"
               >
-                Start Exploring Data
-              </Button>
-            </div>
-          </motion.div>
+                Upload Data <ArrowRightIcon size={14} /> Ask Questions <ArrowRightIcon size={14} /> Generate Insights
+              </motion.div>
+            </motion.div>
 
-          {/* Dashboard Section (MacOS styled glass) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 40 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "circOut" }}
-            className="w-full relative"
-          >
-            {/* The Glass Container */}
-            <div className="bg-white/30 backdrop-blur-2xl rounded-2xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] overflow-hidden relative">
+            {/* Dashboard Section (MacOS styled glass) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98, y: 40 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: "circOut" }}
+              className="w-full relative mt-16"
+            >
+              {/* The Glass Container */}
+              <div className="bg-white/30 backdrop-blur-2xl rounded-2xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] overflow-hidden relative">
 
-              {/* Subtle inner highlight to emulate 3D glass edge */}
-              <div className="absolute inset-0 rounded-2xl border border-white/80 pointer-events-none" />
+                {/* Subtle inner highlight to emulate 3D glass edge */}
+                <div className="absolute inset-0 rounded-2xl border border-white/80 pointer-events-none" />
 
-              {/* MacOS Header */}
-              <div className="bg-white/40 backdrop-blur-md border-b border-white/50 px-4 py-3 flex items-center justify-between relative z-10">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                  <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                </div>
-                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  {activeDataset.topic} - Live
-                </div>
-                <div className="w-[52px]" /> {/* Spacer for strict centering */}
-              </div>
-
-              <div className="p-4 md:p-8">
-                {/* Top Summary Cards with Animation */}
-                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative">
-                  <AnimatePresence mode="popLayout">
-                    {activeDataset.summaries.map((summary, idx) => (
-                      <motion.div
-                        key={`${activeDataset.id}-sum-${idx}`}
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        custom={idx}
-                        className="col-span-1"
-                        transition={{ delay: idx * 0.05 }}
-                      >
-                        <SummaryCard {...summary} />
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
+                {/* MacOS Header */}
+                <div className="bg-white/40 backdrop-blur-md border-b border-white/50 px-4 py-3 flex items-center justify-between relative z-10">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500"></span>
+                    </span>
+                    {activeDataset.topic} - Live
+                  </div>
+                  <div className="w-[52px]" /> {/* Spacer for strict centering */}
                 </div>
 
-                {/* Charts Grid with Animation */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 relative">
-                  <AnimatePresence mode="popLayout">
-                    {activeDataset.charts.map((chart, idx) => (
-                      <motion.div
-                        key={`${activeDataset.id}-chart-${chart.id}`}
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-5 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow relative overflow-hidden"
-                        transition={{ delay: idx * 0.05 + 0.1 }}
-                      >
-                        <div className="flex items-center justify-between mb-2 relative z-10 w-full">
-                          <span className="text-sm font-bold text-gray-800 truncate pr-2">{chart.title}</span>
-                          <div className="flex items-center gap-1.5 flex-shrink-0">
+                <div className="p-4 md:p-8">
+                  {/* Top Summary Cards with Animation */}
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative">
+                    <AnimatePresence mode="popLayout">
+                      {activeDataset.summaries.map((summary, idx) => (
+                        <motion.div
+                          key={`${activeDataset.id}-sum-${idx}`}
+                          variants={itemVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          custom={idx}
+                          className="col-span-1"
+                          transition={{ delay: idx * 0.05 }}
+                        >
+                          <SummaryCard {...summary} />
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
+                  </div>
 
+                  {/* Charts Grid with Animation */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 relative">
+                    <AnimatePresence mode="popLayout">
+                      {activeDataset.charts.map((chart, idx) => (
+                        <motion.div
+                          key={`${activeDataset.id}-chart-${chart.id}`}
+                          variants={itemVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-5 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30_rgb(0,0,0,0.08)] transition-shadow relative overflow-hidden"
+                          transition={{ delay: idx * 0.05 + 0.1 }}
+                        >
+                          <div className="flex items-center justify-between mb-2 relative z-10 w-full">
+                            <span className="text-sm font-bold text-gray-800 truncate pr-2">{chart.title}</span>
                           </div>
-                        </div>
-                        <div style={{ height: "220px", position: "relative", width: "100%" }} className="z-10 mt-2">
-                          <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
-                            <ReactECharts
-                              option={getChartOptions(chart)}
-                              style={{ height: "100%", width: "100%" }}
-                              opts={{ renderer: "svg" }}
-                            />
+                          <div style={{ height: "220px", position: "relative", width: "100%" }} className="z-10 mt-2">
+                            <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+                              <ReactECharts
+                                option={getChartOptions(chart)}
+                                style={{ height: "100%", width: "100%" }}
+                                opts={{ renderer: "svg" }}
+                              />
+                            </div>
                           </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </AnimatePresence>
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
+

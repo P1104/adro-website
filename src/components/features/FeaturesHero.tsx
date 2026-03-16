@@ -97,7 +97,7 @@ export const FeaturesHero = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-black text-[10px] font-bold tracking-widest uppercase mb-8">
                         <Zap size={14} className="fill-black" />
-                        System Architecture
+                        AI Analytics Engine
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black text-black mb-8 tracking-tighter leading-tight">
                         Powerful AI Features for <br />

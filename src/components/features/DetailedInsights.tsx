@@ -28,7 +28,7 @@ export const DetailedInsights = () => {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-black text-black mb-8 tracking-tighter leading-tight"
                     >
-                        Rethinking How Humans <br /> Work With Data
+                        A Smarter Way to <br /> Work With Data
                     </motion.h2>
 
                     <motion.p
@@ -38,21 +38,10 @@ export const DetailedInsights = () => {
                         transition={{ delay: 0.1 }}
                         className="text-xl md:text-2xl text-black/60 font-medium leading-relaxed"
                     >
-                        ADRO turns datasets into conversations. Instead of building dashboards,
-                        writing SQL, or navigating complex BI tools, you simply upload your
-                        data and ask questions.
+                        ADRO transforms how teams analyze data. Ask questions in natural language and instantly uncover insights with AI-powered analytics.
                     </motion.p>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="mt-6 text-lg text-black/40 font-medium"
-                    >
-                        Your dataset becomes an intelligent system that can explain trends,
-                        generate charts, build dashboards, and surface insights instantly.
-                    </motion.p>
+
                 </div>
 
                 {/* Feature Grid */}

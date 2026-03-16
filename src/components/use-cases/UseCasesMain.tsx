@@ -11,7 +11,6 @@ export const UseCasesMain = () => {
             <Navbar />
             <UseCasesHero />
             <UseCasesList />
-            <Footer />
         </main>
     );
 };

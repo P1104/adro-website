@@ -221,7 +221,7 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                             <div className="flex flex-wrap gap-3">
                                 {[
                                     "Startups analyzing business data",
-                                    "Analysts who want faster insights",
+                                    "Executives and Analysts who want faster insights",
                                     "Teams without BI expertise",
                                     "Companies that want AI-powered analytics",
                                 ].map((text, i) => (
@@ -238,7 +238,7 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                 </div>
             </div>
 
-            <div className="py-12 px-4 md:px-16 mt-8 ">
+            {/* <div className="py-12 px-4 md:px-16 mt-8 ">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mb-16 mx-auto text-center">
                         <motion.h2
@@ -254,11 +254,11 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                         </p>
                     </div>
 
-                    {/* Workflow Steps */}
+                
                     <div className="max-w-6xl mx-auto">
                         <div className="grid md:grid-cols-4 gap-0 relative">
 
-                            {/* Connector line behind cards */}
+                   
                             <div className="hidden md:block absolute top-[3.25rem] left-[12.5%] right-[12.5%] h-px bg-black/10 z-0" />
 
                             {workflowSteps.map((item, i) => (
@@ -270,12 +270,11 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                                     transition={{ delay: i * 0.1 }}
                                     className="relative z-10 flex flex-col items-center text-center px-4"
                                 >
-                                    {/* Step icon */}
+                             
                                     <div className="w-[6.5rem] h-[6.5rem] rounded-3xl bg-white border-2 border-black/10 flex items-center justify-center mb-6 shadow-sm group-hover:border-black transition-colors">
                                         <item.icon size={30} className="text-black" />
                                     </div>
 
-                                    {/* Step number badge */}
                                     <Badge
                                         variant="outline"
                                         className="text-[10px] font-bold tracking-[0.15em] uppercase text-black/40 border-black/10 mb-3 rounded-full px-3 py-1"
@@ -286,7 +285,6 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                                     <h3 className="text-lg font-black text-black tracking-tight mb-2">{item.label}</h3>
                                     <p className="text-sm text-black/50 font-medium leading-relaxed">{item.description}</p>
 
-                                    {/* Arrow between steps */}
                                     {i < workflowSteps.length - 1 && (
                                         <div className="hidden md:flex absolute -right-3 top-10 w-6 h-6 items-center justify-center z-20">
                                             <ArrowRight size={16} className="text-black/20" />
@@ -298,7 +296,7 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
 
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 };

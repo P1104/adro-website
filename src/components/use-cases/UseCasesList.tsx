@@ -7,28 +7,33 @@ import { TrendingUp, BarChart, PieChart, Activity, Settings, Layout } from "luci
 const useCases = [
     {
         title: "Sales Analytics",
-        description: "Track revenue trends, analyze regional sales performance, and identify top-performing products using AI-generated dashboards. Sales teams can instantly visualize performance and make data-driven decisions.",
+        description: "Monitor revenue trends, compare regional performance, and identify top-selling products with AI-generated dashboards.",
         icon: TrendingUp,
     },
     {
         title: "Marketing Performance Analysis",
-        description: "Analyze campaign performance, track conversion metrics, and identify the most effective marketing channels. ADRO helps marketing teams turn campaign data into actionable insights.",
+        description: "Evaluate campaign performance, track conversion metrics, and discover which channels drive the highest impact.",
         icon: BarChart,
     },
     {
         title: "Financial Reporting",
-        description: "Generate financial dashboards from accounting or finance datasets. Visualize revenue trends, cost breakdowns, and financial KPIs instantly.",
+        description: "Create financial dashboards to track revenue, costs, and key financial KPIs in real time.",
         icon: PieChart,
     },
     {
         title: "Business Intelligence Dashboards",
-        description: "Create company-wide dashboards that monitor performance across departments including operations, sales, and marketing. ADRO simplifies business intelligence with automated AI analytics.",
+        description: "Build centralized dashboards that track performance across departments such as sales, marketing, and operations.",
         icon: Layout,
     },
     {
         title: "Operational Insights",
-        description: "Analyze operational data to identify inefficiencies, optimize workflows, and improve productivity. Operational teams can use ADRO to make faster, smarter decisions.",
+        description: "Uncover operational inefficiencies, monitor workflows, and improve productivity with AI-driven insights.",
         icon: Settings,
+    },
+    {
+        title: "Product Analytics",
+        description: "Understand how users interact with your product by analyzing feature usage, engagement trends, and user behavior. ADRO helps product teams uncover insights that improve product performance and user experience.",
+        icon: Activity,
     }
 ];
 

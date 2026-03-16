@@ -63,8 +63,14 @@ const osData = {
     }
 };
 
-export const OSSelector = () => {
-    const [os, setOs] = useState<OSType>("windows");
+export const OSSelector = ({
+  os,
+  setOs,
+}: {
+  os: OSType;
+  setOs: (os: OSType) => void;
+}) => {
+    
     const [arch, setArch] = useState<string>("x64");
     const [gpu, setGpu] = useState<string>("cpu");
 

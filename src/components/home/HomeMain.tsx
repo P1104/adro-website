@@ -1,21 +1,24 @@
 import { Hero } from "./Hero/Hero";
-import { About } from "./About/About";
 import { Features } from "./Features/Features";
 import { WhyChoose } from "./WhyChoose/WhyChoose";
-
-
-import { Audience } from "./Audience/Audience";
-import { Demo } from "./Demo/Demo";
+import { Problem } from "./Problem/Problem";
+import { Approach } from "./Approach/Approach";
+import { Questions } from "./Questions/Questions";
+import { Impact } from "./Impact/Impact";
+import { CTA } from "./CTA/CTA";
 
 export const HomeMain = () => {
     return (
         <main className="flex flex-col w-full bg-white">
             <Hero />
-            <About />
+            <Problem />
+            <Approach />
+            <Questions />
+            <Impact />
             <WhyChoose />
             <Features />
-            <Audience />
-            <Demo />
+            <CTA />
+
         </main>
     );
 };
