@@ -1,31 +1,27 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.aidashboardbuilder.com";
+  const baseUrl = "https://yourdomain.com"
 
-  // Essential pages from the website structure
-  const pages = [
+  const routes = [
     "",
     "/about",
+    "/adro-vs-excel",
+    "/adro-vs-powerbi",
+    "/adro-vs-tableau",
     "/contact",
     "/docs",
     "/downloads",
     "/features",
-    "/use-cases",
     "/services",
     "/solutions",
-    "/ai-data-analysis-tool",
-    "/ask-questions-to-your-data",
-    "/adro-vs-powerbi",
-    "/adro-vs-tableau",
-    "/adro-vs-excel",
-    "/blog",
-  ];
+    "/use-cases"
+  ]
 
-  return pages.map((page) => ({
-    url: `${baseUrl}${page}`,
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: page === "" ? 1 : 0.8,
-  }));
+    changeFrequency: "weekly",
+    priority: route === "" ? 1.0 : 0.8,
+  }))
 }
