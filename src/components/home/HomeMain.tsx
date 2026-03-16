@@ -1,23 +1,21 @@
-"use client";
-
-// import { SimpleTitle } from "./SimpleTitle/SimpleTitle";
 import { Hero } from "./Hero/Hero";
-// import { Workflow } from "./Workflow/Workflow";
+import { About } from "./About/About";
 import { Features } from "./Features/Features";
+import { WhyChoose } from "./WhyChoose/WhyChoose";
+
+
+import { Audience } from "./Audience/Audience";
 import { Demo } from "./Demo/Demo";
-// import { Pricing } from "./Pricing/Pricing";
-// import { CTA } from "./CTA/CTA";
 
 export const HomeMain = () => {
     return (
-        <main className="flex flex-col w-full">
+        <main className="flex flex-col w-full bg-white">
             <Hero />
-            {/* <SimpleTitle /> */}
-            {/* <Workflow /> */}
+            <About />
+            <WhyChoose />
             <Features />
+            <Audience />
             <Demo />
-            {/* <Pricing /> */}
-            {/* <CTA /> */}
         </main>
     );
 };

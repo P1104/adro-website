@@ -2,47 +2,44 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, LayoutPanelLeft, LineChart, Search, ShieldCheck, TrendingUp, Cloud, Lock, Users, Sparkles, Zap, Shield, Globe, Cpu, Layers, Database } from "lucide-react";
+import { Database, Sparkles, MessageSquare, Zap, LineChart, Share2 } from "lucide-react";
 
 const features = [
     {
-        title: "DuckDB Ingestion",
-        description: "Lightning-fast file processing. Converts CSV/Excel into optimized DuckDB tables for millisecond query response.",
+        title: "Upload and Analyze Data Instantly",
+        description: "Upload datasets in CSV or Excel format and begin analyzing immediately. ADRO automatically detects column types, metrics, and relationships to prepare your dataset.",
         icon: Database,
     },
-
-
     {
-        title: "Query API",
-        description: "LLM-driven chart data generation. Maps natural language directly to visualized data structures.",
+        title: "AI-Generated Dashboards",
+        description: "Create interactive dashboards automatically using AI. ADRO converts raw datasets into charts, KPIs, and visual reports within seconds. No manual setup required.",
+        icon: Sparkles,
+    },
+    {
+        title: "Natural Language Data Queries",
+        description: "Ask questions about your data in plain English. Example: 'Show revenue trends over time' or 'Which region performed best?' ADRO generates insights instantly.",
+        icon: MessageSquare,
+    },
+    {
+        title: "Intelligent Data Insights",
+        description: "ADRO identifies patterns, anomalies, and trends within your data using AI-powered analytics. Understand performance and make smarter decisions.",
         icon: Zap,
     },
     {
-        title: "Data Cleaning",
-        description: "Clean.py utilities handle categorical normalization, null replacement, and type casting out of the box.",
-        icon: Sparkles,
-    },
-
-    {
-        title: "Export Suite",
-        description: "High-fidelity exports for dashboards and tables. Integrated SVG, PDF, and CSV generation.",
+        title: "Interactive Visualizations",
+        description: "Explore your dataset using dynamic charts and dashboards. Filter data, compare metrics, and drill down into trends for deeper insights.",
         icon: LineChart,
     },
     {
-        title: "Secure Access",
-        description: "FastAPI-powered CORS middleware and role-based access control for enterprise-grade security.",
-        icon: Lock,
-    },
-    {
-        title: "Real-time Sync",
-        description: "Live synchronization across Data and Dashboard sections via our centralized processing layer.",
-        icon: Users,
+        title: "Export and Share Dashboards",
+        description: "Export dashboards and reports in multiple formats including PNG, JPG, Excel, and PDF. Share insights with teams and stakeholders easily.",
+        icon: Share2,
     }
 ];
 
 export const FeaturesList = () => {
     return (
-        <section id="features" className="py-2 px-16 bg-white relative">
+        <section id="features" className="py-14 px-16 bg-white relative">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-20">
                     <motion.div
@@ -57,7 +54,7 @@ export const FeaturesList = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-black text-black mb-6"
+                        className="text-3xl md:text-5xl font-black text-black mb-6"
                     >
                         Take Full Control of Your Data
                     </motion.h2>

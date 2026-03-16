@@ -17,16 +17,16 @@ import {
 
 export const DetailedInsights = () => {
     return (
-        <section className="py-24 px-16 bg-white">
+        <section className="py-14 px-16 bg-white">
             <div className="container mx-auto px-4">
 
                 {/* Header */}
-                <div className="max-w-4xl mb-24">
+                <div className="max-w-4xl mb-24 mx-auto text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-black text-black mb-8 tracking-tighter leading-tight"
+                        className="text-3xl md:text-5xl font-black text-black mb-8 tracking-tighter leading-tight"
                     >
                         Rethinking How Humans <br /> Work With Data
                     </motion.h2>

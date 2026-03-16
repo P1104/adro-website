@@ -100,11 +100,11 @@ export const FeaturesHero = () => {
                         System Architecture
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black text-black mb-8 tracking-tighter leading-tight">
-                        Engineered for <br />
-                        <span className="text-black/40 text-3xl md:text-5xl">Clarity & Control.</span>
+                        Powerful AI Features for <br />
+                        <span className="text-black/40 text-3xl md:text-5xl">Modern Data Analytics.</span>
                     </h1>
                     <p className="text-lg md:text-xl text-black/40 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Explore the powerful technical foundation of ADRO. Turn raw datasets into interactive analytics. Ask questions, generate custom charts, and build dashboards instantly with AI — with minimal setup.
+                        ADRO transforms the way teams analyze data by combining AI-driven analytics, automated dashboards, and natural language queries into a single platform. Upload datasets, ask questions, and instantly generate dashboards without complex BI tools or technical setup.
                     </p>
                 </motion.div>
 

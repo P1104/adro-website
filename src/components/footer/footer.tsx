@@ -78,6 +78,9 @@ export function Footer() {
             <Link href="/features" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
              Features
             </Link>
+            <Link href="/use-cases" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+             Use Cases
+            </Link>
              <Link href="/downloads" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
              Downloads
             </Link>

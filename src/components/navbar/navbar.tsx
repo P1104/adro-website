@@ -26,6 +26,7 @@ interface NavItem {
 const navItems: NavItem[] = [
     { name: "Home", url: "/", icon: Home },
     { name: "Features", url: "/features", icon: Layout },
+    { name: "Use Cases", url: "/use-cases", icon: Zap },
     { name: "Docs", url: "/docs", icon: BookOpen },
     { name: "Downloads", url: "/downloads", icon: Download },
     { name: "Contact", url: "/contact", icon: Mail },
