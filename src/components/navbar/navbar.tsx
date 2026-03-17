@@ -56,7 +56,7 @@ export function Navbar() {
                                            />
                                        </div>
                         
-                        <span className="font-bold text-lg tracking-tight">ADRO</span>
+                        <p className="font-bold text-lg tracking-tight">ADRO</p>
                     </Link>
                     {navItems.map((item) => {
                         const isActive = pathname === item.url || (item.url !== "/" && pathname.startsWith(item.url));
@@ -120,7 +120,7 @@ export function Navbar() {
                                            />
                                        </div>
                         
-                                <span className="font-bold text-2xl tracking-tight">ADRO</span>
+                                <p className="font-bold text-2xl tracking-tight">ADRO</p>
                             </div>
                             <button
                                 onClick={() => setIsMobileMenuOpen(false)}

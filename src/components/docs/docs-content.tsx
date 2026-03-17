@@ -57,10 +57,10 @@ function renderBlock(block: DocContentBlock, index: number) {
 
         case "heading":
             return (
-                <h4 key={index} className="text-lg font-bold mt-8 mb-3 tracking-tight text-black flex items-center gap-2">
+                <h3 key={index} className="text-lg font-bold mt-8 mb-3 tracking-tight text-black flex items-center gap-2">
                     <span className="w-1 h-5 bg-black rounded-full inline-block" />
                     {block.text}
-                </h4>
+                </h3>
             );
 
         case "list":
@@ -94,7 +94,7 @@ function renderBlock(block: DocContentBlock, index: number) {
             return (
                 <div key={index} className="relative my-6 rounded-xl overflow-hidden">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1e1e1e] border-b border-white/5">
-                        <span className="text-xs font-mono text-white/40">Code</span>
+                        <p className="text-xs font-mono text-white/40">Code</p>
                     </div>
                     <pre className="bg-[#1a1a1a] p-4 text-sm font-mono text-green-400 overflow-x-auto">
                         <code>{block.text}</code>
@@ -167,7 +167,7 @@ export default function DocsContent({
                                 { step: "04", label: "Export", desc: "PNG, PDF, Excel" },
                             ].map((item) => (
                                 <div key={item.step} className="p-5 rounded-2xl border border-black/8 bg-black/[0.02] hover:border-black/15 hover:shadow-sm transition-all cursor-default">
-                                    <span className="text-[10px] font-black text-black/25 mb-2 block uppercase tracking-widest">Step {item.step}</span>
+                                    <p className="text-[10px] font-black text-black/25 mb-2 block uppercase tracking-widest">Step {item.step}</p>
                                     <h5 className="font-bold text-base text-black mb-0.5">{item.label}</h5>
                                     <p className="text-[11px] text-black/40 font-medium">{item.desc}</p>
                                 </div>

@@ -105,7 +105,7 @@ export const OSSelector = ({
                                     }`}
                             >
                                 <Icon size={24} className={isActive ? "" : "opacity-60"} />
-                                <span>{data.name}</span>
+                                <p>{data.name}</p>
                             </button>
                         );
                     })}

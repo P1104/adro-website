@@ -248,7 +248,7 @@ const SummaryCard = ({ title, value, subtitle, icon, colorClass }: any) => {
   return (
     <div className="bg-white/40 backdrop-blur-md rounded-[20px] border border-white/60 p-4 flex flex-col justify-between shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all h-[110px]">
       <div className="flex items-start justify-between mb-3 relative z-10 gap-2">
-        <span className="text-[11px] font-bold text-gray-600 leading-tight truncate px-0">{title}</span>
+        <p className="text-[11px] font-bold text-gray-600 leading-tight truncate px-0">{title}</p>
         <div className="flex-shrink-0 flex items-center justify-center w-[24px] h-[24px] bg-[#f8f9fa] border border-[#e5e7eb] rounded-md shadow-sm text-sm">
           {icon}
         </div>
@@ -383,10 +383,10 @@ export const Hero = () => {
                     <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
                   </div>
                   <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
-                    <span className="relative flex h-2 w-2">
+                    <p className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-500"></span>
-                    </span>
+                    </p>
                     {activeDataset.topic} - Live
                   </div>
                   <div className="w-[52px]" /> {/* Spacer for strict centering */}
@@ -427,7 +427,7 @@ export const Hero = () => {
                           transition={{ delay: idx * 0.05 + 0.1 }}
                         >
                           <div className="flex items-center justify-between mb-2 relative z-10 w-full">
-                            <span className="text-sm font-bold text-gray-800 truncate pr-2">{chart.title}</span>
+                            <p className="text-sm font-bold text-gray-800 truncate pr-2">{chart.title}</p>
                           </div>
                           <div style={{ height: "220px", position: "relative", width: "100%" }} className="z-10 mt-2">
                             <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>

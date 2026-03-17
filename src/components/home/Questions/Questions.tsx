@@ -74,7 +74,7 @@ export const Questions = () => {
                 <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center">
                   <Database size={14} className="text-white" />
                 </div>
-                <span className="text-[10px] text-black uppercase tracking-widest">Insight Engine</span>
+                <p className="text-[10px] text-black uppercase tracking-widest">Insight Engine</p>
               </div>
               {/* <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest border border-gray-200 px-3 py-1 rounded-full">
                 Processed in 0.4s
@@ -83,7 +83,7 @@ export const Questions = () => {
 
             <div className="grid md:grid-cols-[1.5fr,1fr] gap-12 items-center">
               <div className="text-left space-y-4">
-                <h4 className="text-xl font-black text-gray-900 leading-tight">Revenue Analysis Summary</h4>
+                <h3 className="text-xl font-black text-gray-900 leading-tight">Revenue Analysis Summary</h3>
                 <p className="text-gray-600 font-medium leading-relaxed">
                   Your revenue increased by <span className="text-black font-black">24%</span> in Q3. The growth was primarily driven by the <span className="text-black font-black underline decoration-1">Enterprise segment</span> in North America, which outperformed expectations.
                 </p>

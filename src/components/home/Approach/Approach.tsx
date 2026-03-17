@@ -23,9 +23,9 @@ export const Approach = () => (
           viewport={{ once: true }}
           className="p-8 bg-white rounded-3xl border border-gray-100"
         >
-          <div className="text-black font-black mb-4 flex items-center gap-2">
+          <h3 className="text-black font-black mb-4 flex items-center gap-2">
             <Zap size={20} /> Intelligent Understanding
-          </div>
+          </h3>
           <p className="text-gray-500 font-medium">ADRO understands your data, analyzes patterns, and instantly generates insights and visualizations.</p>
         </motion.div>
         <motion.div
@@ -34,9 +34,9 @@ export const Approach = () => (
           viewport={{ once: true }}
           className="p-8 bg-white rounded-3xl border border-gray-100"
         >
-          <div className="text-black font-black mb-4 flex items-center gap-2">
+          <h3 className="text-black font-black mb-4 flex items-center gap-2">
             <MessageSquare size={20} /> Conversational Analytics
-          </div>
+          </h3>
           <p className="text-gray-500 font-medium">Data analytics becomes as simple as having a conversation with your dataset.</p>
         </motion.div>
       </div>

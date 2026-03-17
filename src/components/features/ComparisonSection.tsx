@@ -91,17 +91,17 @@ export const ComparisonSection = () => {
                                                 <div className="w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center mb-1">
                                                     <Check size={14} className="text-white" />
                                                 </div>
-                                                <span className="text-xs font-bold text-slate-900 text-center">{row.adro}</span>
+                                                <p className="text-xs font-bold text-slate-900 text-center">{row.adro}</p>
                                             </div>
                                         </td>
                                         <td className="py-5 px-10 text-center border-r border-black/5">
-                                            <span className="text-xs font-medium text-black/40">{row.powerBi}</span>
+                                            <p className="text-xs font-medium text-black/40">{row.powerBi}</p>
                                         </td>
                                         <td className="py-5 px-10 text-center border-r border-black/5">
-                                            <span className="text-xs font-medium text-black/40">{row.tableau}</span>
+                                            <p className="text-xs font-medium text-black/40">{row.tableau}</p>
                                         </td>
                                         <td className="py-5 px-10 text-center">
-                                            <span className="text-xs font-medium text-black/40">{row.excel}</span>
+                                            <p className="text-xs font-medium text-black/40">{row.excel}</p>
                                         </td>
                                     </tr>
                                 ))}
