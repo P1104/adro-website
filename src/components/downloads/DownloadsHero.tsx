@@ -30,10 +30,10 @@ export const DownloadsHero = ({ os }: { os: OSType }) => {
                 >
 
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                    <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
                         <DownloadCloud size={16} />
                         Get Adro Desktop
-                    </div>
+                    </p>
 
                     {/* Heading */}
                     <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">

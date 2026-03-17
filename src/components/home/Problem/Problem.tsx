@@ -35,7 +35,7 @@ export const Problem = () => (
             <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mb-6 shadow-sm">
               <item.icon size={24} className="text-gray-900" />
             </div>
-            <h4 className="text-xl font-black text-gray-900 mb-3">{item.title}</h4>
+            <h3 className="text-xl font-black text-gray-900 mb-3">{item.title}</h3>
             <p className="text-sm text-gray-500 font-medium leading-relaxed">{item.desc}</p>
           </motion.div>
         ))}

@@ -48,15 +48,15 @@ export default function ServicesPage() {
         <div className="pt-32 pb-24">
             {/* Services Hero */}
             <section className="container mx-auto px-4 mb-32 text-center">
-                <motion.div
+                <motion.p
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6"
                 >
                     Our Capabilities
-                </motion.div>
+                </motion.p>
                 <h1 className="text-5xl md:text-7xl font-extrabold text-foreground mb-8 tracking-tight max-w-5xl mx-auto">
-                    Intelligent Solutions for a <span className="text-primary">Data-Driven World</span>.
+                    Intelligent Solutions for a Data-Driven World.
                 </h1>
                 <p className="text-xl text-muted-foreground font-medium leading-relaxed max-w-3xl mx-auto">
                     Explore our suite of AI-powered services designed to transform how you interact with and understand your data.

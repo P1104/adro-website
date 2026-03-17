@@ -51,9 +51,9 @@ export function Footer() {
                     />
                 </div>
 
-                <span className="text-lg font-bold text-slate-900">
+                <p className="text-lg font-bold text-slate-900">
                     ADRO
-                </span>
+                </p>
                 </Link>
  
             <p className="text-xs text-slate-500 max-w-xs leading-relaxed">

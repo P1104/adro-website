@@ -44,7 +44,7 @@ export const Story = () => {
                                 <Zap className="text-white w-48 h-48 fill-white/10" />
                                 <div className="absolute top-12 right-12 text-7xl font-black text-white/5">2026</div>
                                 <div className="absolute bottom-12 left-12">
-                                    <div className="text-white font-bold tracking-widest uppercase text-sm mb-2 opacity-40">Since Launch</div>
+                                    <p className="text-white font-bold tracking-widest uppercase text-sm mb-2 opacity-40">Since Launch</p>
                                     <div className="text-white text-5xl font-black">1.2B INSIGHTS</div>
                                 </div>
                             </div>

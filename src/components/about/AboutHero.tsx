@@ -12,10 +12,10 @@ export const AboutHero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-black text-xs font-bold tracking-widest uppercase mb-8">
+                    <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/5 border border-black/10 text-black text-xs font-bold tracking-widest uppercase mb-8">
                         <Globe size={14} className="fill-black" />
                         Our Identity
-                    </div>
+                    </p>
                     <h1 className="text-5xl md:text-8xl font-black text-black mb-10 tracking-tighter leading-tight">
                         Bridging the <br /> <span className="text-black/40">Intelligence Gap.</span>
                     </h1>

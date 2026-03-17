@@ -25,7 +25,7 @@ export const Impact = () => (
                 className="bg-gray-50 border border-gray-100 p-6 rounded-3xl"
               >
                 <item.icon size={32} className="text-black mb-4" />
-                <h4 className="font-black text-lg leading-tight">{item.label}</h4>
+                <h3 className="font-black text-lg leading-tight">{item.label}</h3>
               </motion.div>
             ))}
           </div>

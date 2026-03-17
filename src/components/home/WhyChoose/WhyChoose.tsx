@@ -147,7 +147,7 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                                 <div className="p-4 bg-white rounded-2xl shadow-xl">
                                     <div className="flex items-center gap-3 mb-2">
                                         <Sparkles size={14} className="text-black" />
-                                        <span className="text-[10px] font-bold text-black uppercase tracking-widest">ADRO AI</span>
+                                        <p className="text-[10px] font-bold text-black uppercase tracking-widest">ADRO AI</p>
                                     </div>
                                     <p className="text-black font-medium">Analyzing dataset... Generating sales performance dashboard.</p>
                                 </div>
@@ -229,7 +229,7 @@ export const WhyChoose = ({ competitor = "Traditional BI tools" }: WhyChooseProp
                                         <div className="w-4 h-4 rounded-full bg-black flex items-center justify-center shrink-0">
                                             <Check size={10} className="text-white" />
                                         </div>
-                                        <span className="text-sm font-semibold text-black">{text}</span>
+                                        <p className="text-sm font-semibold text-black">{text}</p>
                                     </div>
                                 ))}
                             </div>
